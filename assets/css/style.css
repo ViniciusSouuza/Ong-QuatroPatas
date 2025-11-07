@@ -177,3 +177,381 @@ img { max-width: 100%; height: auto; display: block; }
 @media (min-width: 1400px) {
   .container { max-width: 1320px; }
 }
+
+/* --- 5. COMPONENTES --- */
+
+/* 5.1. Header e Menu Principal Responsivo */
+.main-header {
+  background-color: var(--color-neutral-white);
+  padding: var(--spacing-2) 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+.main-nav {
+  display: none; /* Escondido em mobile */
+}
+
+.main-nav ul {
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+.main-nav a {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-dark);
+  text-decoration: none;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+/* Submenu Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-neutral-white);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  min-width: 200px;
+  padding: var(--spacing-1) 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-1) var(--spacing-2);
+}
+
+/* Botão do Menu Mobile */
+.menu-toggle {
+  display: block; /* Visível em mobile */
+  font-size: var(--font-size-xl);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-primary-dark);
+}
+
+/* Mostra o menu em telas maiores (lg) */
+@media (min-width: 992px) {
+  .main-nav {
+    display: block;
+  }
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Estilo do menu mobile quando ativo */
+.main-nav.active {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--color-neutral-white);
+  box-shadow: var(--box-shadow);
+}
+
+.main-nav.active ul {
+  flex-direction: column;
+  padding: var(--spacing-2);
+}
+
+/* 5.2. Seções e Footer */
+.section {
+  padding: var(--spacing-6) 0;
+}
+.section-light {
+  background-color: var(--color-neutral-light);
+}
+
+.main-footer {
+  background-color: var(--color-neutral-dark);
+  color: var(--color-neutral-light);
+  padding: var(--spacing-5) 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+}
+
+.footer-section h4 {
+  color: var(--color-neutral-white);
+  margin-bottom: var(--spacing-2);
+}
+.footer-section p, .footer-section a {
+  color: var(--color-neutral-light);
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: var(--spacing-4);
+  padding-top: var(--spacing-2);
+  border-top: 1px solid var(--color-neutral-medium);
+}
+
+/* 5.3. Botões com Estados Visuais */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-neutral-white);
+}
+/* Estados: hover, focus, active, disabled */
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-neutral-white);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.btn-primary:focus {
+  outline: 2px solid var(--color-primary-dark);
+  outline-offset: 2px;
+}
+.btn-primary:active {
+  transform: translateY(0);
+  background-color: var(--color-primary-dark);
+}
+.btn:disabled, .btn:disabled:hover {
+  background-color: var(--color-neutral-medium);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-neutral-white);
+}
+.btn-secondary:hover {
+  background-color: var(--color-secondary-dark);
+  color: var(--color-neutral-white);
+}
+
+/* 5.4. Cards Responsivos (para projetos) */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-4);
+}
+/* Layout de 2 colunas em 'md' e 3 em 'lg' */
+@media (min-width: 768px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 992px) {
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+  background-color: var(--color-neutral-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: var(--spacing-3);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Faz o conteúdo crescer */
+}
+
+.card-content h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-2);
+}
+
+.card-content p {
+  font-size: var(--font-size-base);
+  color: var(--color-neutral-medium);
+  flex-grow: 1; /* Empurra o botão para baixo */
+  margin-bottom: var(--spacing-3);
+}
+
+.card-footer {
+  padding: 0 var(--spacing-3) var(--spacing-3);
+}
+
+/* 5.5. Badges e Tags */
+.tags-container {
+  margin-bottom: var(--spacing-2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-1);
+}
+.badge {
+  display: inline-block;
+  padding: calc(var(--spacing-1) / 2) var(--spacing-1);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--border-radius);
+}
+.badge-primary {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+.badge-secondary {
+  background-color: var(--color-secondary-light);
+  color: var(--color-secondary-dark);
+}
+
+/* 5.6. Formulários Estilizados e Validação */
+.form-group {
+  margin-bottom: var(--spacing-3);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-1);
+  color: var(--color-neutral-dark);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: var(--spacing-2);
+  font-size: var(--font-size-base);
+  border: 1px solid var(--color-neutral-medium);
+  border-radius: var(--border-radius);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+
+/* Validação Visual */
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+  border-color: var(--color-feedback-error);
+  background-color: #fff8f8;
+}
+
+/* 5.7. Componentes de Feedback (Alerts, Modals) */
+
+/* Alerts */
+.alert {
+  padding: var(--spacing-3);
+  margin-bottom: var(--spacing-3);
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+}
+.alert-success {
+  background-color: #e8f5e9;
+  border-color: var(--color-feedback-success);
+  color: #2e7d32;
+}
+.alert-error {
+  background-color: #ffebee;
+  border-color: var(--color-feedback-error);
+  color: #c62828;
+}
+
+/* Modal (Toast pode ser derivado disso ou com JS puro) */
+.modal-backdrop {
+  display: none; /* Escondido por padrão */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+.modal-content {
+  background-color: var(--color-neutral-white);
+  padding: var(--spacing-4);
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--spacing-2);
+  right: var(--spacing-2);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-medium);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
