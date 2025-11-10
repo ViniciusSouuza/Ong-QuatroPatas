@@ -18,7 +18,7 @@
   --color-feedback-error: #f44336;
   --color-feedback-warning: #ffeb3b;
 
-  /* 1.2. Tipografia Hierárquica */
+  /* Tipografia Hierárquica */
   --font-family-primary: 'Arial', 'Helvetica', sans-serif; /* Use @import do Google Fonts se preferir */
   --font-family-headings: 'Georgia', 'Times New Roman', serif;
 
@@ -33,7 +33,7 @@
   --font-weight-regular: 400;
   --font-weight-bold: 700;
 
-  /* 1.3. Sistema de Espaçamento Modular */
+  /* Sistema de Espaçamento Modular */
   --spacing-1: 8px;   /* xs */
   --spacing-2: 16px;  /* sm */
   --spacing-3: 24px;  /* md */
@@ -41,7 +41,7 @@
   --spacing-5: 48px;  /* xl */
   --spacing-6: 64px;  /* xxl */
 
-  /* 1.4. Outras variáveis (bordas, sombras) */
+  /* Outras variáveis (bordas, sombras) */
   --border-radius: 4px;
   --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
@@ -180,7 +180,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* --- 5. COMPONENTES --- */
 
-/* 5.1. Header e Menu Principal Responsivo */
+/* Header e Menu Principal Responsivo */
 .main-header {
   background-color: var(--color-neutral-white);
   padding: var(--spacing-2) 0;
@@ -265,7 +265,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--color-primary-dark);
 }
 
-/* Mostra o menu em telas maiores (lg) */
+/* Mostra o menu em telas maiores */
 @media (min-width: 992px) {
   .main-nav {
     display: block;
@@ -291,7 +291,7 @@ img { max-width: 100%; height: auto; display: block; }
   padding: var(--spacing-2);
 }
 
-/* 5.2. Seções e Footer */
+/* Seções e Footer */
 .section {
   padding: var(--spacing-6) 0;
 }
@@ -326,7 +326,7 @@ img { max-width: 100%; height: auto; display: block; }
   border-top: 1px solid var(--color-neutral-medium);
 }
 
-/* 5.3. Botões com Estados Visuais */
+/* Botões com Estados Visuais */
 .btn {
   display: inline-block;
   padding: var(--spacing-2) var(--spacing-4);
@@ -375,7 +375,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--color-neutral-white);
 }
 
-/* 5.4. Cards Responsivos (para projetos) */
+/* Cards Responsivos (para projetos) */
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -432,7 +432,7 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 0 var(--spacing-3) var(--spacing-3);
 }
 
-/* 5.5. Badges e Tags */
+/* Badges e Tags */
 .tags-container {
   margin-bottom: var(--spacing-2);
   display: flex;
@@ -455,7 +455,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--color-secondary-dark);
 }
 
-/* 5.6. Formulários Estilizados e Validação */
+/* Formulários Estilizados e Validação */
 .form-group {
   margin-bottom: var(--spacing-3);
   display: flex;
@@ -496,7 +496,7 @@ img { max-width: 100%; height: auto; display: block; }
   background-color: #fff8f8;
 }
 
-/* 5.7. Componentes de Feedback (Alerts, Modals) */
+/* Componentes de Feedback (Alerts, Modals) */
 
 /* Alerts */
 .alert {
@@ -516,7 +516,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: #c62828;
 }
 
-/* Modal (Toast pode ser derivado disso ou com JS puro) */
+/* Modal */
 .modal-backdrop {
   display: none; /* Escondido por padrão */
   position: fixed;
