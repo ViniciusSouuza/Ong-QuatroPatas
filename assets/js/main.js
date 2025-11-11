@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.addEventListener('click', () => {
             mainNav.classList.toggle('active');
             
+
             if (mainNav.classList.contains('active')) {
                 menuToggle.setAttribute('aria-label', 'Fechar menu');
             } else {
@@ -95,3 +96,39 @@ document.addEventListener('DOMContentLoaded', () => {
             projetosGrid.appendChild(cardElement);
         });
     }
+
+        // --- CONTROLE DO MODAL DE FEEDBACK ---
+    const modalBackdrop = document.getElementById('feedback-modal');
+    const openModalBtn = document.getElementById('open-modal-btn');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+
+    if (modalBackdrop && openModalBtn && closeModalBtn) {
+        openModalBtn.addEventListener('click', () => {
+            modalBackdrop.classList.add('active');
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modalBackdrop.classList.remove('active');
+        });
+
+        // Fechar clicando fora do modal
+        modalBackdrop.addEventListener('click', (event) => {
+            if (event.target === modalBackdrop) {
+                modalBackdrop.classList.remove('active');
+            }
+        });
+    }
+
+    // --- Validação de Formulário (extra, para toast/feedback) ---
+    const formVoluntario = document.getElementById('form-voluntario');
+    if (formVoluntario) {
+        formVoluntario.addEventListener('submit', (event) => {
+            event.preventDefault(); 
+            alert('Cadastro enviado com sucesso! (Isto seria um Toast ou Modal de feedback)');
+            
+            // Limpa o formulário
+            formVoluntario.reset();
+        });
+    }
+
+});
